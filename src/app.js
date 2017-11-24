@@ -4,8 +4,10 @@ const start = document.querySelector('#start');
 const reset = document.querySelector('#reset');
 const record = document.querySelector('#record');
 const list = document.querySelector('#list');
-let playSound = document.querySelector('#audio');
-let alert = document.querySelector('#alert');
+const playSound = document.querySelector('#audio');
+const alert = document.querySelector('#alert');
+const duplicate = document.querySelector('#duplicate');
+
 let time = 0;
 let stopped = true;
 let interval;
@@ -37,9 +39,11 @@ function resetCounter() {
 function recordTime() {
 	if (time !== 0) {
 		if (lastrecord === time) {
-			alert.innerHTML = 'Recording duplicate times !!';
-			alert.style.display = 'block';
-			alert.style.animationName = 'alert';
+			duplicate.style.display = 'block';
+			setTimeout(() => {
+				duplicate.style.display = 'none';
+			}, 900);
+
 			return;
 		} else {
 			lastrecord = time;
@@ -48,10 +52,10 @@ function recordTime() {
 			list.innerHTML += `<li>${time / 100}</li>`;
 		}
 	} else {
-		alert.innerHTML = 'Timer not yet started to record !!';
 		alert.style.display = 'block';
-		alert.style.animationName = 'alert';
-		alert.innerHTML = '';
+		setTimeout(() => {
+			alert.style.display = 'none';
+		}, 900);
 		return;
 	}
 }

@@ -54,12 +54,14 @@ button:hover {
 	background-color: rgba(255, 255, 255, 0.4);
 	color: #fff;
 }
-#alert {
+#alert,
+#duplicate {
+	display: none;
 	text-align: center;
-	/*animation-name: alert;*/
-	animation-duration: 1s;
-	animation-delay: 0.3s;
-	animation-direction: alternate;
+	transition: 0.3s;
+	color: #ef3054;
+	font-size: 1.4em;
+	font-family: verdana;
 }
 p {
 	font-size: 1.4em;
@@ -104,54 +106,13 @@ p {
 		margin: 3px;
 	}
 
-	#alert {
+	#alert,
+	#duplicate {
 		display: none;
 		font-size: 1em;
-		animation-name: alert2;
-		animation-duration: 1s;
-		animation-delay: 0.3s;
-		animation-direction: alternate;
 	}
 }
-/*animation*/
-@keyframes alert {
-	0% {
-		transform: scale(1);
-		color: #fff;
-	}
 
-	50% {
-		transform: scale(1.7);
-		color: #e54b4b;
-	}
-	75% {
-		transform: scale(0);
-		color: #e54b4b;
-	}
-	100% {
-		transform: scale(1);
-		color: #fff;
-	}
-}
-@keyframes alert2 {
-	0% {
-		transform: scale(1);
-		color: #fff;
-	}
-
-	50% {
-		transform: scale(1.2);
-		color: #e54b4b;
-	}
-	75% {
-		transform: scale(0);
-		color: #e54b4b;
-	}
-	100% {
-		transform: scale(1);
-		color: #fff;
-	}
-}
 /*Video bg*/
 .fullscreen-video-wrap {
 	position: absolute;
